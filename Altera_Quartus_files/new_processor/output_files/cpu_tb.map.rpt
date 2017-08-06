@@ -1,0 +1,2063 @@
+Analysis & Synthesis report for cpu_tb
+Thu Dec 08 15:17:57 2016
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Registers Added for RAM Pass-Through Logic
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated
+ 16. Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_0|altsyncram_esg1:auto_generated
+ 17. Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_1|altsyncram_esg1:auto_generated
+ 18. Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_2|altsyncram_esg1:auto_generated
+ 19. Parameter Settings for User Entity Instance: cpu:mips1
+ 20. Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_pc4_s2
+ 21. Parameter Settings for User Entity Instance: cpu:mips1|im:im1
+ 22. Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_im_s2
+ 23. Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_s2_rs
+ 24. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_mem
+ 25. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_seimm
+ 26. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_rt_rd
+ 27. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_pc4_s2
+ 28. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_control
+ 29. Parameter Settings for User Entity Instance: cpu:mips1|regr:branch_s2_s3
+ 30. Parameter Settings for User Entity Instance: cpu:mips1|regr:baddr_s2_s3
+ 31. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jump_s3
+ 32. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jaddr_s3
+ 33. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s3
+ 34. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_zero_s3_s4
+ 35. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_alurslt
+ 36. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_data2_s3
+ 37. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_data3_s3
+ 38. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_wrreg
+ 39. Parameter Settings for User Entity Instance: cpu:mips1|regr:branch_s3_s4
+ 40. Parameter Settings for User Entity Instance: cpu:mips1|regr:baddr_s3_s4
+ 41. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jump_s4
+ 42. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jaddr_s4
+ 43. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_regwrite_s4
+ 44. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_rdata_s4
+ 45. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_alurslt_s4
+ 46. Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_wrreg_s4
+ 47. Parameter Settings for Inferred Entity Instance: cpu:mips1|dm:dm1|altsyncram:mem_rtl_0
+ 48. Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_0
+ 49. Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_1
+ 50. Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_2
+ 51. Parameter Settings for Inferred Entity Instance: cpu:mips1|alu:alu1|lpm_mult:Mult0
+ 52. altsyncram Parameter Settings by Entity Instance
+ 53. lpm_mult Parameter Settings by Entity Instance
+ 54. Port Connectivity Checks: "cpu:mips1|regr:reg_wrreg_s4"
+ 55. Port Connectivity Checks: "cpu:mips1|regr:reg_alurslt_s4"
+ 56. Port Connectivity Checks: "cpu:mips1|regr:reg_rdata_s4"
+ 57. Port Connectivity Checks: "cpu:mips1|regr:reg_regwrite_s4"
+ 58. Port Connectivity Checks: "cpu:mips1|regr:reg_jaddr_s4"
+ 59. Port Connectivity Checks: "cpu:mips1|regr:reg_jump_s4"
+ 60. Port Connectivity Checks: "cpu:mips1|regr:baddr_s3_s4"
+ 61. Port Connectivity Checks: "cpu:mips1|regr:branch_s3_s4"
+ 62. Port Connectivity Checks: "cpu:mips1|regr:reg_wrreg"
+ 63. Port Connectivity Checks: "cpu:mips1|regr:reg_data3_s3"
+ 64. Port Connectivity Checks: "cpu:mips1|regr:reg_data2_s3"
+ 65. Port Connectivity Checks: "cpu:mips1|regr:reg_alurslt"
+ 66. Port Connectivity Checks: "cpu:mips1|regr:reg_zero_s3_s4"
+ 67. Port Connectivity Checks: "cpu:mips1|regr:reg_s3"
+ 68. Port Connectivity Checks: "cpu:mips1|regr:reg_jaddr_s3"
+ 69. Port Connectivity Checks: "cpu:mips1|regr:reg_jump_s3"
+ 70. Port Connectivity Checks: "cpu:mips1|regr:baddr_s2_s3"
+ 71. Port Connectivity Checks: "cpu:mips1|regr:branch_s2_s3"
+ 72. Port Connectivity Checks: "cpu:mips1|regr:reg_s2_control"
+ 73. Port Connectivity Checks: "cpu:mips1|regr:reg_pc4_s2"
+ 74. Port Connectivity Checks: "cpu:mips1|regr:regr_s2_rs"
+ 75. Elapsed Time Per Partition
+ 76. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 08 15:17:56 2016      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; cpu_tb                                     ;
+; Top-level Entity Name              ; cpu_tb                                     ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 947                                        ;
+;     Total combinational functions  ; 776                                        ;
+;     Dedicated logic registers      ; 321                                        ;
+; Total registers                    ; 321                                        ;
+; Total pins                         ; 17                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 1,536                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; cpu_tb             ; cpu_tb             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; regr.v                           ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/regr.v                                              ;         ;
+; regm.v                           ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/regm.v                                              ;         ;
+; im.v                             ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/im.v                                                ;         ;
+; dm.v                             ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/dm.v                                                ;         ;
+; control.v                        ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/control.v                                           ;         ;
+; alu_control.v                    ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/alu_control.v                                       ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/alu.v                                               ;         ;
+; cpu_tb.v                         ; yes             ; User Verilog HDL File        ; D:/altera/cpu_tb/cpu_tb.v                                            ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_ogb1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/altera/cpu_tb/db/altsyncram_ogb1.tdf                              ;         ;
+; db/altsyncram_esg1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/altera/cpu_tb/db/altsyncram_esg1.tdf                              ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_j8t.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/altera/cpu_tb/db/mult_j8t.tdf                                     ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 947       ;
+;                                             ;           ;
+; Total combinational functions               ; 776       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 452       ;
+;     -- 3 input functions                    ; 307       ;
+;     -- <=2 input functions                  ; 17        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 707       ;
+;     -- arithmetic mode                      ; 69        ;
+;                                             ;           ;
+; Total registers                             ; 321       ;
+;     -- Dedicated logic registers            ; 321       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 17        ;
+; Total memory bits                           ; 1536      ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 417       ;
+; Total fan-out                               ; 4568      ;
+; Average fan-out                             ; 3.72      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
+; |cpu_tb                                      ; 776 (1)           ; 321 (0)      ; 1536        ; 0            ; 0       ; 0         ; 17   ; 0            ; |cpu_tb                                                                          ; work         ;
+;    |cpu:mips1|                               ; 775 (212)         ; 321 (8)      ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1                                                                ; work         ;
+;       |alu:alu1|                             ; 430 (428)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|alu:alu1                                                       ; work         ;
+;          |lpm_mult:Mult0|                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|alu:alu1|lpm_mult:Mult0                                        ; work         ;
+;             |mult_j8t:auto_generated|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated                ; work         ;
+;       |alu_control:alu_ctl1|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|alu_control:alu_ctl1                                           ; work         ;
+;       |im:im1|                               ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|im:im1                                                         ; work         ;
+;       |regm:regm1|                           ; 19 (19)           ; 131 (131)    ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1                                                     ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_0                                ; work         ;
+;             |altsyncram_esg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_0|altsyncram_esg1:auto_generated ; work         ;
+;          |altsyncram:mem_rtl_1|              ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_1                                ; work         ;
+;             |altsyncram_esg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_1|altsyncram_esg1:auto_generated ; work         ;
+;          |altsyncram:mem_rtl_2|              ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_2                                ; work         ;
+;             |altsyncram_esg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_2|altsyncram_esg1:auto_generated ; work         ;
+;       |regr:reg_alurslt_s4|                  ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_alurslt_s4                                            ; work         ;
+;       |regr:reg_alurslt|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_alurslt                                               ; work         ;
+;       |regr:reg_s2_control|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_s2_control                                            ; work         ;
+;       |regr:reg_s2_mem|                      ; 96 (96)           ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_s2_mem                                                ; work         ;
+;       |regr:reg_s2_rt_rd|                    ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_s2_rt_rd                                              ; work         ;
+;       |regr:reg_s2_seimm|                    ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_s2_seimm                                              ; work         ;
+;       |regr:reg_wrreg_s4|                    ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_wrreg_s4                                              ; work         ;
+;       |regr:reg_wrreg|                       ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:reg_wrreg                                                 ; work         ;
+;       |regr:regr_im_s2|                      ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:regr_im_s2                                                ; work         ;
+;       |regr:regr_s2_rs|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu_tb|cpu:mips1|regr:regr_s2_rs                                                ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                        ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; cpu:mips1|regm:regm1|altsyncram:mem_rtl_0|altsyncram_esg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; cpu:mips1|regm:regm1|altsyncram:mem_rtl_1|altsyncram_esg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; cpu:mips1|regm:regm1|altsyncram:mem_rtl_2|altsyncram_esg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
++-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++---------------------------------------------------------------------+--------------------------------------------------+
+; Register name                                                       ; Reason for Removal                               ;
++---------------------------------------------------------------------+--------------------------------------------------+
+; cpu:mips1|regr:reg_jaddr_s3|out[0,1]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_jaddr_s4|out[0,1]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_seimm|out[11]                                 ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[0]   ;
+; cpu:mips1|regr:reg_s2_seimm|out[12]                                 ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[1]   ;
+; cpu:mips1|regr:reg_s2_seimm|out[13]                                 ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[2]   ;
+; cpu:mips1|regr:reg_s2_seimm|out[14]                                 ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[3]   ;
+; cpu:mips1|regr:reg_s2_seimm|out[18,20,22,24,26,28,30]               ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[4]   ;
+; cpu:mips1|regr:reg_s2_seimm|out[16,17,19,21,23,25,27,29,31]         ; Merged with cpu:mips1|regr:reg_s2_seimm|out[15]  ;
+; cpu:mips1|regr:reg_s2_seimm|out[15]                                 ; Merged with cpu:mips1|regr:reg_s2_rt_rd|out[4]   ;
+; cpu:mips1|regr:reg_s2_control|out[6]                                ; Merged with cpu:mips1|regr:reg_s2_control|out[4] ;
+; cpu:mips1|regr:regr_pc4_s2|out[1]                                   ; Merged with cpu:mips1|regr:regr_pc4_s2|out[0]    ;
+; cpu:mips1|pc[1]                                                     ; Merged with cpu:mips1|pc[0]                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[1]                                   ; Merged with cpu:mips1|regr:baddr_s3_s4|out[0]    ;
+; cpu:mips1|regr:baddr_s2_s3|out[1]                                   ; Merged with cpu:mips1|regr:baddr_s2_s3|out[0]    ;
+; cpu:mips1|regr:regr_im_s2|out[3..5,7,8,10,13,15,18,20,23..28,30,31] ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[6,10]                         ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[6,8,10]                       ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[4,6,10]                       ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:regr_s2_rs|out[1,2,4,7..9]                           ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_control|out[4,5]                              ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_jump_s3|out[0]                                   ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:branch_s2_s3|out[0,1]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_jaddr_s3|out[5..7,9,10,12,15,17,20,22,25..27]    ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s3|out[0,2]                                      ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_rt_rd|out[2,4,7,9]                            ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_seimm|out[3..5,7,8,10]                        ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_control|out[2]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_jump_s4|out[0]                                   ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:branch_s3_s4|out[0,1]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_jaddr_s4|out[3]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[3]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[3]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[3]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[4]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[4]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[4]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[4]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[5]                                  ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[5]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[5]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[6]                                  ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[6]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[6]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[7]                                  ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[7]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[7]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[8]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[8]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[8]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[8]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[9]                                  ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[9]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[9]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[31]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[31]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[31]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[31]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[30]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[30]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[30]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[30]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[29]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[29]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[29]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[29]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[28]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[28]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[28]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[28]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[27]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[27]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[27]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[26]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[26]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[26]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[25]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[25]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[25]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[24]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[24]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[24]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[24]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[23]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[23]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[23]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[23]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[22]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[22]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[22]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[21]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[21]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[21]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[21]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[20]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[20]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[20]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[19]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[19]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[19]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[19]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[18]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[18]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[18]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[18]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[17]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[17]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[17]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[16]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[16]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[16]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[16]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[15]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[15]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[15]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[14]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[14]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[14]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[14]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[13]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[13]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[13]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[13]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[12]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[12]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[12]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[11]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[11]                                 ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[11]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[11]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[10]                                 ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:baddr_s3_s4|out[10]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[10]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s4|out[2]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_jaddr_s3|out[2]                                  ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[2]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[2]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:regr_pc4_s2|out[2..31]                               ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s3_s4|out[0]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:baddr_s2_s3|out[0]                                   ; Lost fanout                                      ;
+; cpu:mips1|regr:regr_pc4_s2|out[0]                                   ; Lost fanout                                      ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[0]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[1..46]                            ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_regwrite_s4|out[0]                               ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_rdata_s4|out[0..3]                               ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_wrreg|out[2,4]                                   ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regr:reg_rdata_s4|out[4..31]                              ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_zero_s3_s4|out[0]                                ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_wrreg_s4|out[2,4]                                ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[5,9]                          ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[5,9]                          ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[5,9]                          ; Stuck at GND due to stuck port data_in           ;
+; cpu:mips1|pc[0]                                                     ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_s2_control|out[1]                                ; Stuck at VCC due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s3|out[3]                                        ; Stuck at VCC due to stuck port data_in           ;
+; cpu:mips1|regr:reg_regwrite_s4|out[1]                               ; Stuck at VCC due to stuck port data_in           ;
+; cpu:mips1|regr:reg_s2_control|out[3,7]                              ; Merged with cpu:mips1|regr:reg_s2_control|out[0] ;
+; cpu:mips1|regr:reg_s2_seimm|out[6]                                  ; Merged with cpu:mips1|regr:regr_s2_rs|out[0]     ;
+; cpu:mips1|regr:reg_s2_seimm|out[9]                                  ; Merged with cpu:mips1|regr:regr_s2_rs|out[3]     ;
+; cpu:mips1|regr:regr_im_s2|out[6,9,11,12,14,22]                      ; Merged with cpu:mips1|regr:regr_im_s2|out[21]    ;
+; cpu:mips1|regr:regr_s2_rs|out[0,3,6]                                ; Merged with cpu:mips1|regr:regr_s2_rs|out[5]     ;
+; cpu:mips1|regr:reg_s2_rt_rd|out[0,1,3]                              ; Merged with cpu:mips1|regr:regr_s2_rs|out[5]     ;
+; cpu:mips1|pc[10..31]                                                ; Lost fanout                                      ;
+; cpu:mips1|regr:reg_data2_s3|out[0..31]                              ; Lost fanout                                      ;
+; Total Number of Removed Registers = 401                             ;                                                  ;
++---------------------------------------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                              ;
++--------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; Register name                        ; Reason for Removal        ; Registers Removed due to This Register                                                ;
++--------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; cpu:mips1|regr:regr_im_s2|out[31]    ; Stuck at GND              ; cpu:mips1|regr:reg_s2_control|out[5], cpu:mips1|regr:reg_jump_s3|out[0],              ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:branch_s2_s3|out[0], cpu:mips1|regr:branch_s2_s3|out[1],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_s3|out[0], cpu:mips1|regr:reg_s2_control|out[2],                   ;
+;                                      ;                           ; cpu:mips1|regr:reg_jump_s4|out[0], cpu:mips1|regr:branch_s3_s4|out[0],                ;
+;                                      ;                           ; cpu:mips1|regr:branch_s3_s4|out[1], cpu:mips1|dm:dm1|mem_rtl_0_bypass[1],             ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[2], cpu:mips1|dm:dm1|mem_rtl_0_bypass[3],           ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[4], cpu:mips1|dm:dm1|mem_rtl_0_bypass[5],           ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[15], cpu:mips1|dm:dm1|mem_rtl_0_bypass[16],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[17], cpu:mips1|dm:dm1|mem_rtl_0_bypass[18],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[19], cpu:mips1|dm:dm1|mem_rtl_0_bypass[20],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[21], cpu:mips1|dm:dm1|mem_rtl_0_bypass[22],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[23], cpu:mips1|dm:dm1|mem_rtl_0_bypass[24],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[25], cpu:mips1|dm:dm1|mem_rtl_0_bypass[26],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[27], cpu:mips1|dm:dm1|mem_rtl_0_bypass[28],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[29], cpu:mips1|dm:dm1|mem_rtl_0_bypass[30],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[31], cpu:mips1|dm:dm1|mem_rtl_0_bypass[32],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[33], cpu:mips1|dm:dm1|mem_rtl_0_bypass[34],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[35], cpu:mips1|dm:dm1|mem_rtl_0_bypass[36],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[37], cpu:mips1|dm:dm1|mem_rtl_0_bypass[38],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[39], cpu:mips1|dm:dm1|mem_rtl_0_bypass[40],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[41], cpu:mips1|dm:dm1|mem_rtl_0_bypass[42],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[43], cpu:mips1|dm:dm1|mem_rtl_0_bypass[44],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[45], cpu:mips1|dm:dm1|mem_rtl_0_bypass[46],         ;
+;                                      ;                           ; cpu:mips1|regr:reg_s2_control|out[1], cpu:mips1|regr:reg_s3|out[3], cpu:mips1|pc[28], ;
+;                                      ;                           ; cpu:mips1|pc[29], cpu:mips1|pc[30], cpu:mips1|pc[31],                                 ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[0], cpu:mips1|regr:reg_data2_s3|out[1],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[2], cpu:mips1|regr:reg_data2_s3|out[3],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[4], cpu:mips1|regr:reg_data2_s3|out[5],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[6], cpu:mips1|regr:reg_data2_s3|out[7],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[8], cpu:mips1|regr:reg_data2_s3|out[9],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[10], cpu:mips1|regr:reg_data2_s3|out[11],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[12], cpu:mips1|regr:reg_data2_s3|out[13],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[14], cpu:mips1|regr:reg_data2_s3|out[15],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[16], cpu:mips1|regr:reg_data2_s3|out[17],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[18], cpu:mips1|regr:reg_data2_s3|out[19],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[20], cpu:mips1|regr:reg_data2_s3|out[21],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[22], cpu:mips1|regr:reg_data2_s3|out[23],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[24], cpu:mips1|regr:reg_data2_s3|out[25],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[26], cpu:mips1|regr:reg_data2_s3|out[27],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[28], cpu:mips1|regr:reg_data2_s3|out[29],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_data2_s3|out[30], cpu:mips1|regr:reg_data2_s3|out[31]              ;
+; cpu:mips1|regr:regr_im_s2|out[18]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_0_bypass[6], cpu:mips1|regr:reg_jaddr_s3|out[20],        ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[20], cpu:mips1|regr:baddr_s3_s4|out[20],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[20], cpu:mips1|regr:reg_rdata_s4|out[1],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[2], cpu:mips1|regr:reg_rdata_s4|out[3],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[30], cpu:mips1|regr:reg_rdata_s4|out[27],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[26], cpu:mips1|regr:reg_rdata_s4|out[25],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[24], cpu:mips1|regr:reg_rdata_s4|out[23],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[22], cpu:mips1|regr:reg_rdata_s4|out[21],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[20], cpu:mips1|regr:reg_rdata_s4|out[19],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[18], cpu:mips1|regr:reg_rdata_s4|out[17],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[16], cpu:mips1|regr:reg_rdata_s4|out[15],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[14], cpu:mips1|regr:reg_rdata_s4|out[13],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[12], cpu:mips1|regr:reg_rdata_s4|out[11],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[10], cpu:mips1|regr:reg_rdata_s4|out[9],              ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[8], cpu:mips1|regr:reg_rdata_s4|out[7],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[6], cpu:mips1|regr:reg_rdata_s4|out[5],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[4]                                                    ;
+; cpu:mips1|regr:reg_s2_control|out[4] ; Stuck at GND              ; cpu:mips1|regr:reg_s3|out[2], cpu:mips1|regr:reg_s2_rt_rd|out[9],                     ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_s2_rt_rd|out[7], cpu:mips1|regr:reg_regwrite_s4|out[0],            ;
+;                                      ;                           ; cpu:mips1|regr:reg_wrreg|out[2], cpu:mips1|regr:reg_wrreg|out[4],                     ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[29], cpu:mips1|regr:reg_wrreg_s4|out[2],              ;
+;                                      ;                           ; cpu:mips1|regr:reg_wrreg_s4|out[4], cpu:mips1|regm:regm1|mem_rtl_0_bypass[5],         ;
+;                                      ;                           ; cpu:mips1|regm:regm1|mem_rtl_0_bypass[9], cpu:mips1|regm:regm1|mem_rtl_1_bypass[5],   ;
+;                                      ;                           ; cpu:mips1|regm:regm1|mem_rtl_1_bypass[9], cpu:mips1|regm:regm1|mem_rtl_2_bypass[5],   ;
+;                                      ;                           ; cpu:mips1|regm:regm1|mem_rtl_2_bypass[9], cpu:mips1|pc[0]                             ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[0] ; Stuck at GND              ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[6], cpu:mips1|dm:dm1|mem_rtl_0_bypass[7],           ;
+;                                      ; due to stuck port data_in ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[8], cpu:mips1|dm:dm1|mem_rtl_0_bypass[9],           ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[10], cpu:mips1|dm:dm1|mem_rtl_0_bypass[11],         ;
+;                                      ;                           ; cpu:mips1|dm:dm1|mem_rtl_0_bypass[12], cpu:mips1|dm:dm1|mem_rtl_0_bypass[13]          ;
+; cpu:mips1|regr:regr_im_s2|out[20]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_0_bypass[10], cpu:mips1|regr:reg_jaddr_s3|out[22],       ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[22], cpu:mips1|regr:baddr_s3_s4|out[22],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[22], cpu:mips1|regr:reg_rdata_s4|out[0],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_rdata_s4|out[31]                                                   ;
+; cpu:mips1|regr:regr_im_s2|out[10]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_2_bypass[10], cpu:mips1|regr:regr_s2_rs|out[4],          ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[12], cpu:mips1|regr:reg_s2_seimm|out[10],             ;
+;                                      ;                           ; cpu:mips1|regr:reg_jaddr_s4|out[12], cpu:mips1|regr:baddr_s3_s4|out[12],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[12]                                                    ;
+; cpu:mips1|regr:regr_im_s2|out[8]     ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_2_bypass[6], cpu:mips1|regr:regr_s2_rs|out[2],           ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[10], cpu:mips1|regr:reg_s2_seimm|out[8],              ;
+;                                      ;                           ; cpu:mips1|regr:reg_jaddr_s4|out[10], cpu:mips1|regr:baddr_s3_s4|out[10],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[10]                                                    ;
+; cpu:mips1|regr:regr_im_s2|out[7]     ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_2_bypass[4], cpu:mips1|regr:regr_s2_rs|out[1],           ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[9], cpu:mips1|regr:reg_s2_seimm|out[7],               ;
+;                                      ;                           ; cpu:mips1|regr:reg_jaddr_s4|out[9], cpu:mips1|regr:baddr_s3_s4|out[9],                ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[9]                                                     ;
+; cpu:mips1|regr:regr_im_s2|out[23]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_1_bypass[6], cpu:mips1|regr:regr_s2_rs|out[7],           ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[25], cpu:mips1|regr:reg_jaddr_s4|out[25],             ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s3_s4|out[25], cpu:mips1|regr:baddr_s2_s3|out[25]                ;
+; cpu:mips1|regr:regr_im_s2|out[25]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_1_bypass[10], cpu:mips1|regr:regr_s2_rs|out[9],          ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[27], cpu:mips1|regr:reg_jaddr_s4|out[27],             ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s3_s4|out[27], cpu:mips1|regr:baddr_s2_s3|out[27]                ;
+; cpu:mips1|regr:regr_im_s2|out[24]    ; Stuck at GND              ; cpu:mips1|regm:regm1|mem_rtl_1_bypass[8], cpu:mips1|regr:regr_s2_rs|out[8],           ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s3|out[26], cpu:mips1|regr:reg_jaddr_s4|out[26],             ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s3_s4|out[26], cpu:mips1|regr:baddr_s2_s3|out[26]                ;
+; cpu:mips1|regr:regr_im_s2|out[15]    ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s3|out[17], cpu:mips1|regr:reg_s2_rt_rd|out[4],              ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[17], cpu:mips1|regr:baddr_s3_s4|out[17],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[17], cpu:mips1|regr:reg_rdata_s4|out[28]               ;
+; cpu:mips1|regr:reg_jaddr_s3|out[0]   ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s4|out[0], cpu:mips1|regr:baddr_s3_s4|out[0],                ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:baddr_s2_s3|out[0], cpu:mips1|regr:regr_pc4_s2|out[0],                 ;
+;                                      ;                           ; cpu:mips1|regr:reg_zero_s3_s4|out[0]                                                  ;
+; cpu:mips1|regr:regr_im_s2|out[13]    ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s3|out[15], cpu:mips1|regr:reg_s2_rt_rd|out[2],              ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[15], cpu:mips1|regr:baddr_s3_s4|out[15],              ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[15]                                                    ;
+; cpu:mips1|regr:regr_im_s2|out[5]     ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s3|out[7], cpu:mips1|regr:reg_s2_seimm|out[5],               ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[7], cpu:mips1|regr:baddr_s3_s4|out[7],                ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[7]                                                     ;
+; cpu:mips1|regr:regr_im_s2|out[4]     ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s3|out[6], cpu:mips1|regr:reg_s2_seimm|out[4],               ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[6], cpu:mips1|regr:baddr_s3_s4|out[6],                ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[6]                                                     ;
+; cpu:mips1|regr:regr_im_s2|out[3]     ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s3|out[5], cpu:mips1|regr:reg_s2_seimm|out[3],               ;
+;                                      ; due to stuck port data_in ; cpu:mips1|regr:reg_jaddr_s4|out[5], cpu:mips1|regr:baddr_s3_s4|out[5],                ;
+;                                      ;                           ; cpu:mips1|regr:baddr_s2_s3|out[5]                                                     ;
+; cpu:mips1|regr:reg_jaddr_s4|out[3]   ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[3]                                                    ;
+; cpu:mips1|regr:baddr_s3_s4|out[3]    ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[3]                                                     ;
+; cpu:mips1|regr:reg_jaddr_s4|out[4]   ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[4]                                                    ;
+; cpu:mips1|regr:baddr_s3_s4|out[4]    ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[4]                                                     ;
+; cpu:mips1|regr:reg_jaddr_s4|out[8]   ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[8]                                                    ;
+; cpu:mips1|regr:baddr_s3_s4|out[8]    ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[8]                                                     ;
+; cpu:mips1|regr:reg_jaddr_s4|out[31]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[31]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[31]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[31]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[30]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[30]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[30]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[30]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[29]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[29]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[29]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[29]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[28]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[28]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[28]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[28]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[24]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[24]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[24]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[24]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[23]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[23]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[23]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[23]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[21]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[21]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[21]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[21]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[19]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[19]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[19]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[19]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s3|out[1]   ; Stuck at GND              ; cpu:mips1|regr:reg_jaddr_s4|out[1]                                                    ;
+;                                      ; due to stuck port data_in ;                                                                                       ;
+; cpu:mips1|regr:baddr_s3_s4|out[18]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[18]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[16]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[16]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[16]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[16]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[14]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[14]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[14]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[14]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[18]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[18]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[13]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[13]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[11]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[11]                                                   ;
+; cpu:mips1|regr:baddr_s3_s4|out[11]   ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[11]                                                    ;
+; cpu:mips1|regr:reg_jaddr_s4|out[2]   ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[2]                                                    ;
+; cpu:mips1|regr:baddr_s3_s4|out[2]    ; Lost Fanouts              ; cpu:mips1|regr:baddr_s2_s3|out[2]                                                     ;
+; cpu:mips1|regr:reg_jaddr_s4|out[13]  ; Lost Fanouts              ; cpu:mips1|regr:reg_jaddr_s3|out[13]                                                   ;
++--------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 321   ;
+; Number of registers using Synchronous Clear  ; 96    ;
+; Number of registers using Synchronous Load   ; 96    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                 ;
++-------------------------------------------+--------------------------------+
+; Register Name                             ; RAM Name                       ;
++-------------------------------------------+--------------------------------+
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[0]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[1]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[2]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[3]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[4]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[5]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[6]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[7]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[8]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[9]      ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[10]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[11]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[12]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[13]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[14]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[15]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[16]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[17]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[18]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[19]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[20]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[21]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[22]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[23]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[24]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[25]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[26]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[27]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[28]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[29]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[30]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[31]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[32]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[33]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[34]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[35]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[36]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[37]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[38]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[39]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[40]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[41]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[42]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[43]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[44]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[45]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|dm:dm1|mem_rtl_0_bypass[46]     ; cpu:mips1|dm:dm1|mem_rtl_0     ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[0]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[1]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[2]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[3]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[4]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[5]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[6]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[7]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[8]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[9]  ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[10] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[11] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[12] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[13] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[14] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[15] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[16] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[17] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[18] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[19] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[20] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[21] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[22] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[23] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[24] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[25] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[26] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[27] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[28] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[29] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[30] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[31] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[32] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[33] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[34] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[35] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[36] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[37] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[38] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[39] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[40] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[41] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_0_bypass[42] ; cpu:mips1|regm:regm1|mem_rtl_0 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[0]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[1]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[2]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[3]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[4]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[5]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[6]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[7]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[8]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[9]  ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[10] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[11] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[12] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[13] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[14] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[15] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[16] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[17] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[18] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[19] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[20] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[21] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[22] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[23] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[24] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[25] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[26] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[27] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[28] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[29] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[30] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[31] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[32] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[33] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[34] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[35] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[36] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[37] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[38] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[39] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[40] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[41] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_1_bypass[42] ; cpu:mips1|regm:regm1|mem_rtl_1 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[0]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[1]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[2]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[3]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[4]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[5]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[6]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[7]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[8]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[9]  ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[10] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[11] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[12] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[13] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[14] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[15] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[16] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[17] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[18] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[19] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[20] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[21] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[22] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[23] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[24] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[25] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[26] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[27] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[28] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[29] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[30] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[31] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[32] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[33] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[34] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[35] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[36] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[37] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[38] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[39] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[40] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[41] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
+; cpu:mips1|regm:regm1|mem_rtl_2_bypass[42] ; cpu:mips1|regm:regm1|mem_rtl_2 ;
++-------------------------------------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                 ;
++------------------------------------------------------+--------------------------------+------+
+; Register Name                                        ; Megafunction                   ; Type ;
++------------------------------------------------------+--------------------------------+------+
+; cpu:mips1|regm:regm1|mem[0..2,4..7,10,12..31][0..31] ; cpu:mips1|regm:regm1|mem_rtl_2 ; RAM  ;
+; cpu:mips1|regm:regm1|mem[3,8,9,11][4..31]            ; cpu:mips1|regm:regm1|mem_rtl_2 ; RAM  ;
++------------------------------------------------------+--------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |cpu_tb|cpu:mips1|regr:reg_s2_mem|out[49] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |cpu_tb|cpu:mips1|regr:reg_s2_mem|out[64] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |cpu_tb|cpu:mips1|regr:reg_s2_mem|out[4]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu_tb|cpu:mips1|Selector43              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu_tb|cpu:mips1|Selector8               ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |cpu_tb|cpu:mips1|alusrc_data3[3]         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |cpu_tb|cpu:mips1|alusrc_data3[6]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Source assignments for cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------+
+; Assignment                      ; Value              ; From ; To                            ;
++---------------------------------+--------------------+------+-------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                             ;
++---------------------------------+--------------------+------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_0|altsyncram_esg1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_1|altsyncram_esg1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for cpu:mips1|regm:regm1|altsyncram:mem_rtl_2|altsyncram_esg1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; NMEM           ; 20    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_pc4_s2 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|im:im1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; NMEM           ; 20    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_im_s2 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; N              ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:regr_s2_rs ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; N              ; 10    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_mem ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; N              ; 96    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_seimm ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_rt_rd ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 10    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_pc4_s2 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; N              ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s2_control ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:branch_s2_s3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 2     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:baddr_s2_s3 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jump_s3 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 1     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jaddr_s3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_s3 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; N              ; 4     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_zero_s3_s4 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 1     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_alurslt ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_data2_s3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_data3_s3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_wrreg ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; N              ; 5     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:branch_s3_s4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 2     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:baddr_s3_s4 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jump_s4 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 1     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_jaddr_s4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_regwrite_s4 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; N              ; 2     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_rdata_s4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 32    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_alurslt_s4 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:mips1|regr:reg_wrreg_s4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; N              ; 5     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:mips1|dm:dm1|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+----------------------------+
+; Parameter Name                     ; Value                ; Type                       ;
++------------------------------------+----------------------+----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                    ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                    ;
+; WIDTH_A                            ; 32                   ; Untyped                    ;
+; WIDTHAD_A                          ; 7                    ; Untyped                    ;
+; NUMWORDS_A                         ; 128                  ; Untyped                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                    ;
+; WIDTH_B                            ; 32                   ; Untyped                    ;
+; WIDTHAD_B                          ; 7                    ; Untyped                    ;
+; NUMWORDS_B                         ; 128                  ; Untyped                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                    ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                    ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                    ;
+; INIT_FILE                          ; UNUSED               ; Untyped                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                    ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                    ;
+; CBXI_PARAMETER                     ; altsyncram_ogb1      ; Untyped                    ;
++------------------------------------+----------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
+; WIDTH_A                            ; 32                   ; Untyped                        ;
+; WIDTHAD_A                          ; 5                    ; Untyped                        ;
+; NUMWORDS_A                         ; 32                   ; Untyped                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 32                   ; Untyped                        ;
+; WIDTHAD_B                          ; 5                    ; Untyped                        ;
+; NUMWORDS_B                         ; 32                   ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_esg1      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_1 ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
+; WIDTH_A                            ; 32                   ; Untyped                        ;
+; WIDTHAD_A                          ; 5                    ; Untyped                        ;
+; NUMWORDS_A                         ; 32                   ; Untyped                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 32                   ; Untyped                        ;
+; WIDTHAD_B                          ; 5                    ; Untyped                        ;
+; NUMWORDS_B                         ; 32                   ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_esg1      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:mips1|regm:regm1|altsyncram:mem_rtl_2 ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
+; WIDTH_A                            ; 32                   ; Untyped                        ;
+; WIDTHAD_A                          ; 5                    ; Untyped                        ;
+; NUMWORDS_A                         ; 32                   ; Untyped                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 32                   ; Untyped                        ;
+; WIDTHAD_B                          ; 5                    ; Untyped                        ;
+; NUMWORDS_B                         ; 32                   ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_esg1      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: cpu:mips1|alu:alu1|lpm_mult:Mult0  ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4            ; Untyped             ;
+; LPM_WIDTHB                                     ; 4            ; Untyped             ;
+; LPM_WIDTHP                                     ; 8            ; Untyped             ;
+; LPM_WIDTHR                                     ; 8            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_j8t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                      ;
++-------------------------------------------+-------------------------------------------+
+; Name                                      ; Value                                     ;
++-------------------------------------------+-------------------------------------------+
+; Number of entity instances                ; 4                                         ;
+; Entity Instance                           ; cpu:mips1|dm:dm1|altsyncram:mem_rtl_0     ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
+;     -- WIDTH_A                            ; 32                                        ;
+;     -- NUMWORDS_A                         ; 128                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 32                                        ;
+;     -- NUMWORDS_B                         ; 128                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ;
+; Entity Instance                           ; cpu:mips1|regm:regm1|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
+;     -- WIDTH_A                            ; 32                                        ;
+;     -- NUMWORDS_A                         ; 32                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 32                                        ;
+;     -- NUMWORDS_B                         ; 32                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                  ;
+; Entity Instance                           ; cpu:mips1|regm:regm1|altsyncram:mem_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
+;     -- WIDTH_A                            ; 32                                        ;
+;     -- NUMWORDS_A                         ; 32                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 32                                        ;
+;     -- NUMWORDS_B                         ; 32                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                  ;
+; Entity Instance                           ; cpu:mips1|regm:regm1|altsyncram:mem_rtl_2 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
+;     -- WIDTH_A                            ; 32                                        ;
+;     -- NUMWORDS_A                         ; 32                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 32                                        ;
+;     -- NUMWORDS_B                         ; 32                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                  ;
++-------------------------------------------+-------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                            ;
++---------------------------------------+-----------------------------------+
+; Name                                  ; Value                             ;
++---------------------------------------+-----------------------------------+
+; Number of entity instances            ; 1                                 ;
+; Entity Instance                       ; cpu:mips1|alu:alu1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                                 ;
+;     -- LPM_WIDTHB                     ; 4                                 ;
+;     -- LPM_WIDTHP                     ; 8                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                ;
+;     -- USE_EAB                        ; OFF                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                ;
++---------------------------------------+-----------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_wrreg_s4" ;
++-------+-------+----------+------------------------------+
+; Port  ; Type  ; Severity ; Details                      ;
++-------+-------+----------+------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                 ;
+; hold  ; Input ; Info     ; Stuck at GND                 ;
++-------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_alurslt_s4" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                   ;
+; hold  ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_rdata_s4" ;
++-------+-------+----------+------------------------------+
+; Port  ; Type  ; Severity ; Details                      ;
++-------+-------+----------+------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                 ;
+; hold  ; Input ; Info     ; Stuck at GND                 ;
++-------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_regwrite_s4" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                    ;
+; hold  ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_jaddr_s4" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_jump_s4" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:baddr_s3_s4" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:branch_s3_s4" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_wrreg" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; hold ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_data3_s3"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; hold ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_data2_s3" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_alurslt" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_zero_s3_s4" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                   ;
+; hold  ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_s3" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; hold ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_jaddr_s3" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; hold     ; Input ; Info     ; Stuck at GND              ;
+; in[1..0] ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_jump_s3" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:baddr_s2_s3" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:branch_s2_s3" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_s2_control" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; hold ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:reg_pc4_s2"                                                           ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; clear ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "cpu:mips1|regr:regr_s2_rs" ;
++-------+-------+----------+----------------------------+
+; Port  ; Type  ; Severity ; Details                    ;
++-------+-------+----------+----------------------------+
+; clear ; Input ; Info     ; Stuck at GND               ;
++-------+-------+----------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Dec 08 15:17:50 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu_tb -c cpu_tb
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file regr.v
+    Info (12023): Found entity 1: regr
+Info (12021): Found 1 design units, including 1 entities, in source file regm.v
+    Info (12023): Found entity 1: regm
+Info (12021): Found 3 design units, including 3 entities, in source file rc_adder.v
+    Info (12023): Found entity 1: full_adder
+    Info (12023): Found entity 2: half_adder
+    Info (12023): Found entity 3: rc_adder
+Info (12021): Found 2 design units, including 2 entities, in source file im_slow.v
+    Info (12023): Found entity 1: im
+    Info (12023): Found entity 2: im_slow
+Info (12021): Found 1 design units, including 1 entities, in source file im_cached.v
+    Info (12023): Found entity 1: im_cached
+Info (12021): Found 0 design units, including 0 entities, in source file im.v
+Info (12021): Found 0 design units, including 0 entities, in source file half_adder.v
+Info (12021): Found 0 design units, including 0 entities, in source file full_adder.v
+Info (12021): Found 1 design units, including 1 entities, in source file dm.v
+    Info (12023): Found entity 1: dm
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control
+Info (12021): Found 1 design units, including 1 entities, in source file cla_full_adder.v
+    Info (12023): Found entity 1: cla_full_adder
+Info (12021): Found 1 design units, including 1 entities, in source file cla_adder_4bit.v
+    Info (12023): Found entity 1: cla_adder_4bit
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.v
+    Info (12023): Found entity 1: alu_control
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu
+Info (12021): Found 2 design units, including 2 entities, in source file cpu_tb.v
+    Info (12023): Found entity 1: cpu_tb
+    Info (12023): Found entity 2: cpu
+Warning (10037): Verilog HDL or VHDL warning at regm.v(45): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at cpu_tb.v(113): conditional expression evaluates to a constant
+Info (12127): Elaborating entity "cpu_tb" for the top level hierarchy
+Warning (10175): Verilog HDL warning at cpu_tb.v(72): ignoring unsupported system task
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:mips1"
+Warning (10036): Verilog HDL or VHDL warning at cpu_tb.v(194): object "imm" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_tb.v(195): object "shamt" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at cpu_tb.v(333): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at cpu_tb.v(355): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at cpu_tb.v(366): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:regr_pc4_s2"
+Info (12128): Elaborating entity "im" for hierarchy "cpu:mips1|im:im1"
+Warning (10030): Net "mem.data_a" at im.v(33) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.waddr_a" at im.v(33) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.we_a" at im.v(33) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "regm" for hierarchy "cpu:mips1|regm:regm1"
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:regr_s2_rs"
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:reg_s2_mem"
+Info (12128): Elaborating entity "control" for hierarchy "cpu:mips1|control:ctl1"
+Warning (10270): Verilog HDL Case Statement warning at control.v(25): incomplete case statement has no default case item
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:reg_s2_control"
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:branch_s2_s3"
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:reg_jump_s3"
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:reg_s3"
+Info (12128): Elaborating entity "alu_control" for hierarchy "cpu:mips1|alu_control:alu_ctl1"
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:mips1|alu:alu1"
+Warning (10036): Verilog HDL or VHDL warning at alu.v(16): object "oflow" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at alu.v(29): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(30): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "regr" for hierarchy "cpu:mips1|regr:reg_wrreg"
+Info (12128): Elaborating entity "dm" for hierarchy "cpu:mips1|dm:dm1"
+Warning (276020): Inferred RAM node "cpu:mips1|dm:dm1|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "cpu:mips1|regm:regm1|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "cpu:mips1|regm:regm1|mem_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "cpu:mips1|regm:regm1|mem_rtl_2" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/altera/cpu_tb/db/cpu_tb.ram0_im_d62519d.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 4 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:mips1|dm:dm1|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 7
+        Info (286033): Parameter NUMWORDS_A set to 128
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 7
+        Info (286033): Parameter NUMWORDS_B set to 128
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:mips1|regm:regm1|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:mips1|regm:regm1|mem_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:mips1|regm:regm1|mem_rtl_2" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:mips1|alu:alu1|Mult0"
+Info (12130): Elaborated megafunction instantiation "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "7"
+    Info (12134): Parameter "NUMWORDS_A" = "128"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "7"
+    Info (12134): Parameter "NUMWORDS_B" = "128"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ogb1.tdf
+    Info (12023): Found entity 1: altsyncram_ogb1
+Info (12130): Elaborated megafunction instantiation "cpu:mips1|regm:regm1|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "cpu:mips1|regm:regm1|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_esg1.tdf
+    Info (12023): Found entity 1: altsyncram_esg1
+Info (12130): Elaborated megafunction instantiation "cpu:mips1|regm:regm1|altsyncram:mem_rtl_1"
+Info (12133): Instantiated megafunction "cpu:mips1|regm:regm1|altsyncram:mem_rtl_1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12130): Elaborated megafunction instantiation "cpu:mips1|regm:regm1|altsyncram:mem_rtl_2"
+Info (12133): Instantiated megafunction "cpu:mips1|regm:regm1|altsyncram:mem_rtl_2" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12130): Elaborated megafunction instantiation "cpu:mips1|alu:alu1|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "cpu:mips1|alu:alu1|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_j8t.tdf
+    Info (12023): Found entity 1: mult_j8t
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a0"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a1"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a2"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a3"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a4"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a5"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a6"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a7"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a8"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a9"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a10"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a11"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a12"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a13"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a14"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a15"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a16"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a17"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a18"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a19"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a20"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a21"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a22"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a23"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a24"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a25"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a26"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a27"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a28"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a29"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a30"
+        Warning (14320): Synthesized away node "cpu:mips1|dm:dm1|altsyncram:mem_rtl_0|altsyncram_ogb1:auto_generated|ram_block1a31"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le3a[5]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[4]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[0]"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le3a[4]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[5]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[4]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[3]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[2]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[3]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[2]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[1]"
+Info (13014): Ignored 20 buffer(s)
+    Info (13016): Ignored 4 CARRY_SUM buffer(s)
+    Info (13019): Ignored 16 SOFT buffer(s)
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le3a[1]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[0]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le4a[1]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le3a[2]"
+        Warning (14320): Synthesized away node "cpu:mips1|alu:alu1|lpm_mult:Mult0|mult_j8t:auto_generated|le3a[3]"
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 261 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "cpu:mips1|regm:regm1|altsyncram:mem_rtl_1|altsyncram_esg1:auto_generated|ALTSYNCRAM"
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "cpu:mips1|regm:regm1|altsyncram:mem_rtl_0|altsyncram_esg1:auto_generated|ALTSYNCRAM"
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "cpu:mips1|regm:regm1|altsyncram:mem_rtl_2|altsyncram_esg1:auto_generated|ALTSYNCRAM"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1064 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 951 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 538 megabytes
+    Info: Processing ended: Thu Dec 08 15:17:57 2016
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

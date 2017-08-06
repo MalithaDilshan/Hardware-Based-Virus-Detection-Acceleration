@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="cpu_tb">
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu_tb|cpu:mips1|alu:alu1|lpm_mult:Mult0" CBX_FILE_NAME="mult_j8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_1" CBX_FILE_NAME="altsyncram_esg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu_tb|cpu:mips1|dm:dm1|altsyncram:mem_rtl_0" CBX_FILE_NAME="altsyncram_ogb1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_0" CBX_FILE_NAME="altsyncram_esg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|cpu_tb|cpu:mips1|regm:regm1|altsyncram:mem_rtl_2" CBX_FILE_NAME="altsyncram_esg1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
