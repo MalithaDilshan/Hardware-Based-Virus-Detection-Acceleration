@@ -1,5 +1,5 @@
 # Hardware-based-virus-detection-acceleration
-Group 01 : Malitha Dilshan, Rangana De Silva, Iranga Naverathne
+Malitha Dilshan, Rangana De Silva, Iranga Naverathne
 
 In this project repository has two main files folder as
 1.'iverilog_files'
